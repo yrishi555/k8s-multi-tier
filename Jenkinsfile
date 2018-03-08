@@ -28,4 +28,5 @@ pipeline {
 		sh("kubectl --namespace=testing-jsayar apply -f k8s/rsvp-web-deployment.yaml")
             }
         }
+    }
 }
