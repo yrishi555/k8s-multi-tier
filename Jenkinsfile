@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-		sh("docker build -t test1 -f /var/lib/jenkins/workspace/k8s-multi-tier/Dockerfile")
+		sh("docker build -f /var/lib/jenkins/workspace/k8s-multi-tier/Dockerfile")
             }
         }
         stage('Test') {
