@@ -1,9 +1,12 @@
 #!/usr/bin/env groovy
 
 pipeline {
-	def imgtag="rsvp:${env.BUILD_NUMBER}"
+	 
     agent any
     
+    environment {
+        imgtag="rsvp:${env.BUILD_NUMBER}"
+    }   	    
     stages {
         stage('Build') {
             steps {
