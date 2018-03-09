@@ -18,15 +18,15 @@ pipeline {
 	stage('Push') {
            steps {
                echo 'Pushing Image to Docker hub'
-	       sh("docker -H :5555 login -u hemantkbajaj -p don2rry") 
-	       sh("kubectl apply --namespace=testing-jsayar -f /var/lib/jenkins/workspace/cicd-pipeline/k8s/rsvp-web-deployment.yaml")
+	       sh("docker -H :5555 login -u hemantkbajaj -p don2rry")
+	       sh("docker -H :5555 push ${imgtag}")	       
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying in kubectl !!!'
 		sh("sed -i.bak 's#teamcloudyuga/rsvpapp#${imgtag}#' ./k8s/rsvp-web-deployment.yaml")
-		sh("kubectl --kubeconfig=/var/lib/jenkins/config get nodes -v=8")
+		sh("kubectl apply --kubeconfig=/var/lib/jenkins/config --namespace=testing-jsayar -f ./k8s/rsvp-web-deployment.yaml")		
             }
         }
     }
