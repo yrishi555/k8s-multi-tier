@@ -11,7 +11,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-		sh("docker -H :5555 push ${imgtag}")
 		sh("docker -H :5555 build -t ${imgtag} .")
             }
         }
