@@ -25,7 +25,7 @@ pipeline {
             steps {
                 echo 'Deploying in kubectl !!!'
 		sh("sed -i.bak 's#teamcloudyuga/rsvpapp#${imgtag}#' ./k8s/rsvp-web-deployment.yaml")
-		sh("kubectl --namespace=testing-jsayar apply -f k8s/rsvp-web-deployment.yaml")
+		sh("kubectl apply -f k8s/rsvp-web-deployment.yaml")
             }
         }
     }
