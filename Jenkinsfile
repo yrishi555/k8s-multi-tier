@@ -23,8 +23,7 @@ pipeline {
             steps {
                 echo 'Deploying in kubectl !!!'
 		sh("sed -i.bak 's#teamcloudyuga/rsvpapp#${imgtag}#' ./k8s/rsvp-web-deployment.yaml")
-		sh("which kubectl")
-		sh("kubectl --kubeconfig=/root/.kube/config get nodes -v=8")
+		sh("kubectl --kubeconfig=/var/lib/jenkins/config get nodes -v=8")
             }
         }
     }
