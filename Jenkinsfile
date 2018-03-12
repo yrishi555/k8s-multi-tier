@@ -17,7 +17,7 @@ pipeline {
 	stage('Test') {
            steps {
                echo 'Testing RSVP'
-	       sh("docker -H :5555 run ${imgtag} python testrvp.py")	       
+	       sh("docker -H :5555 run ${imgtag} python testrsvp.py")	       
             }
 	}
 	stage('Push') {
