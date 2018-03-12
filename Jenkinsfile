@@ -14,6 +14,12 @@ pipeline {
 		sh("docker -H :5555 build -t ${imgtag} .")
             }
         }
+	stage('Test') {
+           steps {
+               echo 'Testing RSVP'
+	       sh("docker -H :5555 run ${imgtag} python testrvp.py")	       
+            }
+	}
 	stage('Push') {
            steps {
                echo 'Pushing Image to Docker hub'
