@@ -8,7 +8,7 @@ import json
 app = Flask(__name__)
 
 LINK=os.environ.get('LINK', "www.cloudyuga.guru")
-TEXT1=os.environ.get('TEXT1', "CloudYuga")
+TEXT1=os.environ.get('TEXT1', "CloudYuga123")
 TEXT2=os.environ.get('TEXT2', "Garage RSVP")
 LOGO=os.environ.get('LOGO', "https://www.underconsideration.com/brandnew/archives/hewlett_packard_enterprise_logo.png")
 COMPANY=os.environ.get('COMPANY', "Mukul Hemant Pvt. Ltd.")
