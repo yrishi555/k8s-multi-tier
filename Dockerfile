@@ -5,6 +5,6 @@ ENV LINK http://www.meetup.com/cloudyuga/
 ENV TEXT1 BLDC
 ENV TEXT2 HPE
 ENV LOGO http://h22168.www2.hpe.com/images/main/partners/wipro/logonew-_hpe__wipro.png
-ENV COMPANY BLDC Pvt. Ltd.
+ENV COMPANY Wipro BLDC Pvt. Ltd.
 RUN pip3 install -r requirements.txt
 CMD python rsvp.py
