@@ -5,7 +5,7 @@ pipeline {
     agent any
     
     environment {
-        imgtag="hemantkbajaj/rsvp:usr1-${env.BUILD_NUMBER}"
+        imgtag="hemantkbajaj/rsvp:usr15-${env.BUILD_NUMBER}"
     }   	    
     stages {
         stage('Build') {
